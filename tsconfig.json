@@ -18,7 +18,15 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    // Memberi tahu TypeScript untuk membaca berkas JS,
+    // karena biasanya berkas tersebut diabaikan sebagai berkas sumber
+    "allowJs": true,
+    // Hasilkan berkas d.ts
+    "declaration": true,
+    // Proses kompilator ini seharusnya
+    // hanya mengeluarkan berkas d.ts
+    "emitDeclarationOnly": true
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
