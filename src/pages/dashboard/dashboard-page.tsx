@@ -2,7 +2,6 @@ const DashboardPage : React.FC = () => {
 
     return (
         <div>
-
         </div>
     )
 }

@@ -7,6 +7,7 @@ const NavItemComponents = ({icon, children, ...rest}: NavItemProps) => {
         as='a'
         href='#'
         style={{ textDecoration: 'none' }}
+        _focus={{ boxShadow: 'none' }}
         >
             <Flex
              align='center'
@@ -15,11 +16,15 @@ const NavItemComponents = ({icon, children, ...rest}: NavItemProps) => {
              borderRadius='lg'
              role='group'
              cursor='pointer'
+             _hover={{
+                 bg: 'cyan.400',
+                 color: 'white'
+             }}
              {...rest}
             >
                 {icon && (<Icon as={icon} mr='4' fontSize='16' _groupHover={{ color: 'white'}} />)}
-            </Flex>
             {children}
+            </Flex>
         </Box>
     );
 }

@@ -2,8 +2,13 @@ import {SidebarProps, LinkItemProps} from "../../model/components/sidebar/Sideba
 import {Box, CloseButton, Flex, Text, useColorModeValue} from "@chakra-ui/react";
 import NavItemComponents from "../nav-item/navitem-components";
 
+interface SidebarContentProps {
+    onClose: SidebarProps['onClose']
+    listItems: LinkItemProps[] | null
+    display: object
+}
 
-const SidebarContent = ({ onClose }: SidebarProps, Items: LinkItemProps[]) => {
+const SidebarContent: React.FC<SidebarContentProps> = ({ onClose, listItems, display}) => {
     return (
         <Box
             transition='3s ease'
@@ -13,19 +18,24 @@ const SidebarContent = ({ onClose }: SidebarProps, Items: LinkItemProps[]) => {
             w={{ base: 'full', md: 60}}
             pos='fixed'
             h='full'
+            {...display}
         >
             <Flex h='20' alignItems='center' mx='8' justifyContent='space-between'>
-                <Text fontSize='2x1' fontFamily='monospace' fontWeight='bold'>
+                <Text fontSize='2xl' fontFamily='monospace' fontWeight='bold'>
                     Logo
                 </Text>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>
             {
-                Items.map((item) => (
-                    <NavItemComponents key={item.name} icon={item.icon}>
-                        {item.name}
-                    </NavItemComponents>
-                ))
+                listItems != null ?
+                (
+                    listItems.map((item) => (
+                        <NavItemComponents key={item.name} icon={item.icon}>
+                            {item.name}
+                        </NavItemComponents>
+                    ))
+                ) :
+                (<div></div>)
             }
         </Box>
     )

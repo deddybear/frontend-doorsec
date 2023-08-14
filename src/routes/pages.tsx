@@ -2,6 +2,7 @@ import {createBrowserRouter, createRoutesFromElements, Route} from "react-router
 import App from "../App";
 import LoginPage from "../pages/login/login-page";
 import DashboardLayouts from "../layouts/dashboard/dashboard-layouts";
+import DashboardPage from "../pages/dashboard/dashboard-page";
 // import DashboardPage from "../pages/dashboard/dashboard-page";
 
 
@@ -12,7 +13,7 @@ const pages = createBrowserRouter(
             <Route path="/login" element={<LoginPage />} />
             <Route path="/dashboard" element={<DashboardLayouts />}>
                 {/*dibawah ini masih error outlet*/}
-                {/*<Route path='/' element={<DashboardPage />}/>*/}
+                <Route path='' element={<DashboardPage />}/>
             </Route>
         </Route>
         // <Route path="/login" element={}>
