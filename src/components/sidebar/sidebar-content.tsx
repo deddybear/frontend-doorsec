@@ -1,10 +1,10 @@
-import {SidebarProps, LinkItemProps} from "../../model/components/sidebar/SidebarProps";
+import {SideBarContentProps} from "../../model/components/sidebar/SideBarContentProps";
 import {Box, CloseButton, Flex, Text, useColorModeValue} from "@chakra-ui/react";
 import NavItemComponents from "../nav-item/navitem-components";
 
 interface SidebarContentProps {
-    onClose: SidebarProps['onClose']
-    listItems: LinkItemProps[] | null
+    onClose: () => void
+    listItems: null | SideBarContentProps[]
     display: object
 }
 
@@ -22,7 +22,7 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ onClose, listItems, dis
         >
             <Flex h='20' alignItems='center' mx='8' justifyContent='space-between'>
                 <Text fontSize='2xl' fontFamily='monospace' fontWeight='bold'>
-                    Logo
+
                 </Text>
                 <CloseButton display={{ base: 'flex', md: 'none' }} onClick={onClose} />
             </Flex>

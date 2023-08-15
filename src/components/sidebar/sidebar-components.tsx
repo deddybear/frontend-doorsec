@@ -1,16 +1,17 @@
-import {Box, Drawer, DrawerContent, useColorModeValue, UseDisclosureProps} from "@chakra-ui/react";
+import {Box, BoxProps, Drawer, DrawerContent, useColorModeValue, UseDisclosureProps} from "@chakra-ui/react";
 import SidebarContent from "./sidebar-content";
-// import {LinkItemProps} from "../../model/components/sidebar/SidebarProps";
-// import {FiHome} from "react-icons/fi";
-import NavbarMobileComponents from "../navbar/navbar-mobile-components";
+import {ReactNode} from "react";
+import {SideBarContentProps} from "../../model/components/sidebar/SideBarContentProps";
 
-const SidebarComponents = ({isOpen, onOpen, onClose}: UseDisclosureProps) => {
-    //
-    // const LinkItems: LinkItemProps[] = [
-    //     {name: 'Hahaha ANY', icon: FiHome},
-    //     {name: 'Home2', icon: FiHome},
-    //     {name: 'Home3', icon: FiHome}
-    // ]
+
+interface SideBarProps extends BoxProps {
+    isOpen: UseDisclosureProps['isOpen'],
+    onClose: UseDisclosureProps['onClose']
+    listItems: null | SideBarContentProps[]
+    children: null | string | ReactNode | ReactNode[]
+}
+
+const SidebarComponents: React.FC<SideBarProps> = ({isOpen, onClose, listItems, children}) => {
 
     return (
         <Box minH='100vh' bg={useColorModeValue('gray.100', 'gray.900')}>
@@ -31,12 +32,12 @@ const SidebarComponents = ({isOpen, onOpen, onClose}: UseDisclosureProps) => {
                     {/*ini buat mobile*/}
                     <SidebarContent
                         onClose={onClose!}
-                        listItems={null}
+                        listItems={listItems}
                         display={{}}
                     />
                 </DrawerContent>
             </Drawer>
-            <NavbarMobileComponents onOpen={onOpen!} display={{}} />
+            {children}
             <Box ml={{ base: 0, md: 60 }} p='4'></Box>
         </Box>
     )
