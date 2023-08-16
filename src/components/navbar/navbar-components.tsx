@@ -20,7 +20,10 @@ interface NavbarProps extends FlexProps {
     colorMode: ColorModeContextType['colorMode']
 }
 
-const NavbarComponents: React.FC<NavbarProps> = ({onOpen, display, toggleColorMode, colorMode}) => {
+const NavbarComponents: React.FC<NavbarProps> = (
+    {onOpen, display, toggleColorMode, colorMode}
+) => {
+
     return (
         <Flex
             ml={{ base: 0, md: 60 }}

@@ -1,4 +1,4 @@
-import {Box, BoxProps, Drawer, DrawerContent, useColorModeValue, UseDisclosureProps} from "@chakra-ui/react";
+import {Box, BoxProps, Drawer, DrawerContent, UseDisclosureProps} from "@chakra-ui/react";
 import SidebarContent from "./sidebar-content";
 import {ReactNode} from "react";
 import {SideBarContentProps} from "../../model/components/sidebar/SideBarContentProps";
@@ -11,13 +11,15 @@ interface SideBarProps extends BoxProps {
     children: null | string | ReactNode | ReactNode[]
 }
 
-const SidebarComponents: React.FC<SideBarProps> = ({isOpen, onClose, listItems, children}) => {
+const SidebarComponents: React.FC<SideBarProps> = (
+    {isOpen, onClose, listItems, children}
+) => {
 
     return (
-        <Box minH='100vh' bg={useColorModeValue('gray.100', 'gray.900')}>
+        <Box>
             <SidebarContent
                 onClose={() => onClose}
-                listItems={null}
+                listItems={listItems}
                 display={{ base: 'none', md: 'block'}}
             />
             <Drawer
@@ -29,11 +31,11 @@ const SidebarComponents: React.FC<SideBarProps> = ({isOpen, onClose, listItems, 
                 size='full'
             >
                 <DrawerContent>
-                    {/*ini buat mobile*/}
+                    {/*ini buat mobile dan isi*/}
                     <SidebarContent
                         onClose={onClose!}
                         listItems={listItems}
-                        display={{}}
+                        display={{ base: 'none', md: 'block'}}
                     />
                 </DrawerContent>
             </Drawer>
