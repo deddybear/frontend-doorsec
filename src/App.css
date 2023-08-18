@@ -1,12 +1,15 @@
 @font-face {
   font-family: 'Rubik-Regular' !important;
-  src: local('Rubik-Regular'), url('../public/fonts/Rubik-Regular.ttf') format('tff') !important;
+  src: local('Rubik-Regular'), url('./assets/fonts/Rubik-Regular.ttf') format('tff') !important;
 }
 
 @font-face {
   font-family: 'Rubik-300-Italic' !important;
-  src: local('Rubik-300-Italic'), url('../public/fonts/Rubik-Italic.ttf') format('tff') !important;
+  src: local('Rubik-300-Italic'), url('./assets/fonts/Rubik-Italic.ttf') format('tff') !important;
 }
 
-
+.test {
+  font-family: 'Rubik-300-Italic', sans-serif;
+  font-size: 18px;
+}
 

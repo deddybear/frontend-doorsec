@@ -1,13 +1,22 @@
-import NavItemProps from "../../model/components/nav-item/NavItemProps";
+import NavItemProps from "../../model/components-props/nav-item/NavItemProps";
 import {Box, Flex, Icon} from "@chakra-ui/react";
+import {useNavigate} from "react-router-dom";
 
-const NavItemComponents = ({icon, children, ...rest}: NavItemProps) => {
+
+const NavItemComponents = ({icon, children, path, ...rest}: NavItemProps) => {
+    const navigate = useNavigate();
+
+    const handleMenu: void = (link: string) => {
+        navigate(link)
+    }
+
     return (
         <Box
         as='a'
         href='#'
         style={{ textDecoration: 'none' }}
         _focus={{ boxShadow: 'none' }}
+        onClick={() => handleMenu(path)}
         >
             <Flex
              align='center'

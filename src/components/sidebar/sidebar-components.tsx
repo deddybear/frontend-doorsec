@@ -1,7 +1,7 @@
 import {Box, BoxProps, Drawer, DrawerContent, UseDisclosureProps} from "@chakra-ui/react";
 import SidebarContent from "./sidebar-content";
 import {ReactNode} from "react";
-import {SideBarContentProps} from "../../model/components/sidebar/SideBarContentProps";
+import {SideBarContentProps} from "../../model/components-props/sidebar/SideBarContentProps";
 
 
 interface SideBarProps extends BoxProps {

@@ -1,4 +1,4 @@
-import {SideBarContentProps} from "../../model/components/sidebar/SideBarContentProps";
+import {SideBarContentProps} from "../../model/components-props/sidebar/SideBarContentProps";
 import {Box, CloseButton, Flex, Text, useColorModeValue} from "@chakra-ui/react";
 import NavItemComponents from "../nav-item/navitem-components";
 
@@ -30,7 +30,7 @@ const SidebarContent: React.FC<SidebarContentProps> = ({ onClose, listItems, dis
                 listItems != null ?
                 (
                     listItems.map((item) => (
-                        <NavItemComponents key={item.name} icon={item.icon}>
+                        <NavItemComponents key={item.name} icon={item.icon} path={item.path}>
                             {item.name}
                         </NavItemComponents>
                     ))

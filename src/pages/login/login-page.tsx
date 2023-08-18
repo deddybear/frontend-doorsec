@@ -15,7 +15,7 @@ const LoginPage : React.FC = () => {
             <Container>
                 <Card boxShadow='lg' rounded='md'>
                     <CardHeader>
-                        <p style={{ fontFamily: 'Rubik-300-Italic'}}>lorem ipsu dolor si amet</p>
+                        <p className='test'>Login</p>
                     </CardHeader>
                     <CardBody>
                         <form>
