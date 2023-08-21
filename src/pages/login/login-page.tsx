@@ -1,29 +1,29 @@
 import {
     Box,
     Button,
-    Card,
-    CardBody, CardHeader,
     Container,
     FormControl,
     Input, InputGroup, InputLeftAddon, Text
 } from "@chakra-ui/react";
+import CardComponents from "../../components/card/card-components";
 
 const LoginPage : React.FC = () => {
 
     return (
-        <Box mt='15em'>
+        <Box mt='7em'>
             <Container>
-                <Card boxShadow='lg' rounded='md'>
-                    <CardHeader>
+                <CardComponents
+                    display={{ boxShadow: 'dark-lg', rounded:'md'}}
+                    headerCard={
                         <p className='test'>Login</p>
-                    </CardHeader>
-                    <CardBody>
+                    }
+                    bodyCard={
                         <form>
                             <Box mt='2em' mb='2em'>
                                 <FormControl isRequired>
                                     <InputGroup>
                                         <InputLeftAddon children='Email' />
-                                        <Input type='email' placeholder='example@gmail.com' />
+                                        <Input name='email' type='email' placeholder='example@gmail.com' />
                                     </InputGroup>
                                 </FormControl>
                             </Box>
@@ -31,7 +31,7 @@ const LoginPage : React.FC = () => {
                                 <FormControl isRequired>
                                     <InputGroup>
                                         <InputLeftAddon children='Code' />
-                                        <Input type='password' placeholder='*****'/>
+                                        <Input name='password' type='password' placeholder='*****'/>
                                     </InputGroup>
                                 </FormControl>
                             </Box>
@@ -44,8 +44,9 @@ const LoginPage : React.FC = () => {
                                 </Button>
                             </Box>
                         </form>
-                    </CardBody>
-                </Card>
+                    }
+                    footerCard={null}
+                />
             </Container>
         </Box>
     )

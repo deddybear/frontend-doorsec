@@ -2,14 +2,14 @@ import {Outlet} from "react-router-dom";
 import SidebarComponents from "../../components/sidebar/sidebar-components";
 import {Box, Flex, useColorMode, useColorModeValue, useDisclosure} from "@chakra-ui/react";
 import NavbarComponents from "../../components/navbar/navbar-components";
-import {SideBarContentProps} from "../../model/components-props/sidebar/SideBarContentProps";
+import {Item} from "../../model/components-props/sidebar/Item";
 import {FiHome, FiTrello, FiLogOut} from "react-icons/fi"
 
 const DashboardLayouts = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { colorMode, toggleColorMode } = useColorMode()
-    const listItems: SideBarContentProps[] = [
+    const listItems: Item[] = [
         { name: 'Dashboard', icon: FiTrello, path: '/dashboard' },
         { name: 'Buy Stock', icon: FiHome, path: '/dashboard/stock' },
         { name: 'Report Selling', icon: FiHome, path: '/dashboard/report-selling' },
@@ -18,7 +18,6 @@ const DashboardLayouts = () => {
     ];
 
     return (
-        <div>
         <Box minH='100vh' bg={useColorModeValue('gray.100', 'gray.900')}>
             <SidebarComponents isOpen={isOpen} onClose={onClose} listItems={listItems}>
                 <NavbarComponents
@@ -38,8 +37,6 @@ const DashboardLayouts = () => {
             </Flex>
 
         </Box>
-
-        </div>
     )
 }
 

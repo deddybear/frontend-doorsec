@@ -1,13 +1,13 @@
 import {Box, BoxProps, Drawer, DrawerContent, UseDisclosureProps} from "@chakra-ui/react";
 import SidebarContent from "./sidebar-content";
 import {ReactNode} from "react";
-import {SideBarContentProps} from "../../model/components-props/sidebar/SideBarContentProps";
+import {Item} from "../../model/components-props/sidebar/Item";
 
 
 interface SideBarProps extends BoxProps {
     isOpen: UseDisclosureProps['isOpen'],
     onClose: UseDisclosureProps['onClose']
-    listItems: null | SideBarContentProps[]
+    listItems: null | Item[]
     children: null | string | ReactNode | ReactNode[]
 }
 

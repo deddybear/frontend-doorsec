@@ -1,6 +1,6 @@
 import {IconType} from "react-icons";
 
-export interface SideBarContentProps {
+export interface Item {
     name: string,
     icon: IconType,
     path: string

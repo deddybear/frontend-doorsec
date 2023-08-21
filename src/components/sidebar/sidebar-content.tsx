@@ -1,10 +1,10 @@
-import {SideBarContentProps} from "../../model/components-props/sidebar/SideBarContentProps";
+import {Item} from "../../model/components-props/sidebar/Item";
 import {Box, CloseButton, Flex, Text, useColorModeValue} from "@chakra-ui/react";
 import NavItemComponents from "../nav-item/navitem-components";
 
 interface SidebarContentProps {
     onClose: () => void
-    listItems: null | SideBarContentProps[]
+    listItems: null | Item[]
     display: object
 }
 
