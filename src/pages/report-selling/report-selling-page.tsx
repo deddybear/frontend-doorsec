@@ -2,7 +2,7 @@
 const ReportSellingPage = () => {
 
     return (
-        <di>Report Selling Page</di>
+        <div>Report Selling Page</div>
     )
 }
 

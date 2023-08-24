@@ -2,18 +2,18 @@ import {Outlet} from "react-router-dom";
 import SidebarComponents from "../../components/sidebar/sidebar-components";
 import {Box, Flex, useColorMode, useColorModeValue, useDisclosure} from "@chakra-ui/react";
 import NavbarComponents from "../../components/navbar/navbar-components";
-import {Item} from "../../model/components-props/sidebar/Item";
-import {FiHome, FiTrello, FiLogOut} from "react-icons/fi"
+import {ItemSidebar} from "../../model/components-props/sidebar/ItemSidebar";
+import {FiHome, FiTrello, FiLogOut, FiShoppingBag, FiShoppingCart} from "react-icons/fi"
 
 const DashboardLayouts = () => {
 
     const { isOpen, onOpen, onClose } = useDisclosure()
     const { colorMode, toggleColorMode } = useColorMode()
-    const listItems: Item[] = [
+    const listItems: ItemSidebar[] = [
         { name: 'Dashboard', icon: FiTrello, path: '/dashboard' },
         { name: 'Buy Stock', icon: FiHome, path: '/dashboard/stock' },
-        { name: 'Report Selling', icon: FiHome, path: '/dashboard/report-selling' },
-        { name: 'Report Buying', icon: FiHome, path: '/dashboard/report-buying' },
+        { name: 'Report Selling', icon: FiShoppingCart, path: '/dashboard/report-selling' },
+        { name: 'Report Buying', icon: FiShoppingBag, path: '/dashboard/report-buying' },
         { name: 'Logout', icon: FiLogOut, path: '/logout'}
     ];
 

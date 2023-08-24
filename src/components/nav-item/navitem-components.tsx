@@ -15,7 +15,7 @@ const NavItemComponents = ({icon, children, path, ...rest}: NavItemProps) => {
     return (
         <Box
         as='a'
-        style={{ textDecoration: 'none'  }}
+        style={{ textDecoration: 'none' }}
         _focus={{ boxShadow: 'none' }}
         onClick={() => handleMenu(path)}
         >
